@@ -1,0 +1,23 @@
+{
+  "name": "app-typescript01",
+  "version": "1.0.0",
+  "description": "App backend typescript",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/typescript/bin/tsc -p tsconfig.build.json && node ./dist/src/app.js",
+    "build": "./node_modules/typescript/bin/tsc -p tsconfig.build.json",
+    "test": "jest --no-cache"
+  },
+  "author": "Daniel Tavares",
+  "license": "MIT",
+  "dependencies": {
+    "inversify": "^6.0.1",
+    "jest": "^27.4.7",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0"
+  }
+}
