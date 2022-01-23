@@ -1,16 +1,14 @@
 import { Item } from "./item.entity";
 import { instanceOfImposto } from "../interfaces/imposto.interface";
 import { instanceOfDesconto } from "../interfaces/desconto.interface";
-import { BaseEntity } from "./base.entity";
 
-export class NotaServico extends BaseEntity {
+export class NotaServico  {
 
   code: number;
   detail: string;
   itens: Item[];
 
   constructor(code: number, detail: string) {
-    super();
     this.code = code;
     this.detail = detail;
     this.itens = [];
@@ -20,7 +18,7 @@ export class NotaServico extends BaseEntity {
     this.itens.push(item);
   }
 
-  getSubTotal(): number {
+  getSubTotal() {
     let total = this.itens
       .map(i => i.preco)
       .reduce((acc, value) => acc += value)

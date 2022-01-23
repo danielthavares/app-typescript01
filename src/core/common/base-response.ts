@@ -29,7 +29,7 @@ const successOnlyMessage = (message: string) =>
 new BaseResponse(true, message, null);
 
 const success = (data: any, message?: string) =>
-new BaseResponse(true, message, data);
+new BaseResponse(true, message || SUCCESS, data);
 
 const failureOnlyMessage = (message: string) =>
 new BaseResponse(false, message || SUCCESS, null);

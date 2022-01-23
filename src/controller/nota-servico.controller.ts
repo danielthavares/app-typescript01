@@ -1,8 +1,8 @@
-import { CreateNotaServicoDTO } from "../dto/create-nota-servico.dto";
-import { NotaServico } from "../entities/nota-servico.entity";
-import { NovaNotaServicoUseCase } from "../usecases/nova-nota-servico";
+import { CreateNotaServicoDTO } from "../core/dto/create-nota-servico.dto";
+import { NotaServico } from "../core/entities/nota-servico.entity";
+import { NovaNotaServicoUseCase } from "../core/usecases/nova-nota-servico";
 
-export class NotaServicoService {
+export class NotaServicoController {
 
     novaNotaServicoUC: NovaNotaServicoUseCase;
 
