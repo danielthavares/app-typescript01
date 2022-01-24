@@ -1,12 +1,12 @@
 import { failureOnlyMessage, success } from "../common/base-response";
 import { NotaServico } from "../entities/nota-servico.entity";
-import { NotaServicoRepository } from "../repositories/nota-servico.repository";
+import { INotaServicoRepository } from "../interfaces/repositories/nota-servico.irepository";
 
 export class NovaNotaServicoUseCase {
 
-    notaServicoRepostory: NotaServicoRepository;
+    notaServicoRepostory: INotaServicoRepository;
 
-    constructor(notaServicoRepostory: NotaServicoRepository) {
+    constructor(notaServicoRepostory: INotaServicoRepository) {
         this.notaServicoRepostory = notaServicoRepostory
     }
 
