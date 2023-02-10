@@ -1,23 +1,31 @@
-import { failureOnlyMessage, success } from "../common/base-response";
+import { inject } from "inversify";
+import { TYPES } from "../../types";
+import {
+  BaseResponse,
+  failureOnlyMessage,
+  success,
+} from "../common/base-response";
 import { NotaServico } from "../entities/nota-servico.entity";
 import { INotaServicoRepository } from "../interfaces/repositories/nota-servico.irepository";
 
 export class NovaNotaServicoUseCase {
+  constructor(
+    @inject(TYPES.INotaServicoRepository)
+    private _notaServicoRepostory: INotaServicoRepository
+  ) {}
 
-    notaServicoRepostory: INotaServicoRepository;
+  async execute(notaServico: NotaServico): Promise<BaseResponse> {
+    const nsByCode = await this._notaServicoRepostory.findByCode(
+      notaServico.getCode()
+    );
 
-    constructor(notaServicoRepostory: INotaServicoRepository) {
-        this.notaServicoRepostory = notaServicoRepostory
-    }
+    if (nsByCode)
+      return failureOnlyMessage(
+        `Existe nota cadastrada com o código: ${notaServico.getCode()}.`
+      );
 
-    async execute(notaServico: NotaServico) {
+    await this._notaServicoRepostory.insert(notaServico);
 
-        const nsByCode = await this.notaServicoRepostory.getByCode(notaServico.code);
-
-        if(nsByCode) return failureOnlyMessage(`Existe nota cadastrada com o código: ${notaServico.code}.`);
-
-        await this.notaServicoRepostory.save(notaServico);
-
-        return success(notaServico);
-    }
+    return success(notaServico);
+  }
 }

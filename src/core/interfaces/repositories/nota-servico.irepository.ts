@@ -1,7 +1,6 @@
 import { NotaServico } from "../../entities/nota-servico.entity";
 
 export interface INotaServicoRepository {
-
-    save(notaServico: NotaServico): Promise<void>;
-    getByCode(code: number): Promise<NotaServico>;
+  insert(notaServico: NotaServico): Promise<void>;
+  findByCode(code: number): Promise<NotaServico>;
 }

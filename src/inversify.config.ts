@@ -1,12 +1,12 @@
 import { Container } from "inversify";
 import { TYPES } from "./types";
-import { INotaServicoRepository } from "./core/interfaces/repositories/nota-servico.irepository"
-import { NotaServicoRepository } from "./infra/repositories/nota-serviceo.repository";
+import { INotaServicoRepository } from "./core/interfaces/repositories/nota-servico.irepository";
+import { NotaServicoRepository } from "./infra/repositories/nota-servico.repository";
 
-const myContainer = new Container();
+const container = new Container();
 
-myContainer.bind<INotaServicoRepository>(TYPES.INotaServicoRepository).to(NotaServicoRepository);
+container
+  .bind<INotaServicoRepository>(TYPES.INotaServicoRepository)
+  .to(NotaServicoRepository);
 
-export {
-    myContainer,
-}
+export { container };
