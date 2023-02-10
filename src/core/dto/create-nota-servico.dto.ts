@@ -1,5 +1,4 @@
-export interface CreateNotaServicoDTO
-{
-    code: number,
-    detail: string
+export class CreateNotaServicoDTO {
+  code: number;
+  detail: string;
 }

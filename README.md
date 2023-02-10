@@ -31,7 +31,7 @@ npm run test
 - Typescript - <span style="color:green">v</span>
 - Jest - <span style="color:green">v</span>
 - Inversify - <span style="color:red">v</span>
-- Express - <span style="color:red">x</span>
+- Express - <span style="color:red">v</span>
 - Ajv - <span style="color:red">x</span>
 
 ---

@@ -1,6 +1,6 @@
 import { Item } from "./item.entity";
-import { instanceOfImposto } from "../interfaces/imposto.interface";
-import { instanceOfDesconto } from "../interfaces/desconto.interface";
+import { instanceOfImposto } from "../interfaces/entities/imposto.interface";
+import { instanceOfDesconto } from "../interfaces/entities/desconto.interface";
 
 export class NotaServico {
   private code: number;
