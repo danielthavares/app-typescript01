@@ -20,16 +20,15 @@ app.use(
 );
 
 app.use("/api", notaServicoController);
-app.use("/api", notaServicoController);
 
 app.use((_req, res) => {
   res.status(404).json({ msg: "URL não encontrada." });
 });
 
-function run() {
+function start() {
   app.listen(PORT, () => {
     console.info(`Servidor no ar ${HOSTNAME}:${PORT}.`);
   });
 }
 
-export { run };
+export { start };

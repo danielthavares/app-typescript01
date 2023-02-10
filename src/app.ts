@@ -1,4 +1,4 @@
 import "reflect-metadata";
-import { run } from "./webapi/api";
+import { start } from "./webapi/api";
 
-run();
+start();

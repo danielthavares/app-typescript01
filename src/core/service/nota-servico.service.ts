@@ -4,7 +4,7 @@ import { CreateNotaServicoDTO } from "../dto/create-nota-servico.dto";
 import { NotaServico } from "../entities/nota-servico.entity";
 import { INotaServicoService } from "../interfaces/services/nota-servico.interface";
 import { INovaNotaServicoUseCase } from "../interfaces/usecases/nova-nota-servico.interface";
-import { TYPES } from "../../infra/types";
+import { TYPES } from "../../infra/di/types";
 
 @injectable()
 export class NotaServicoService implements INotaServicoService {

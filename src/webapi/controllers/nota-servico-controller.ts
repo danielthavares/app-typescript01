@@ -1,8 +1,8 @@
 import express from "express";
 import { CreateNotaServicoDTO } from "../../core/dto/create-nota-servico.dto";
 import { INotaServicoService } from "../../core/interfaces/services/nota-servico.interface";
-import { container } from "../../infra/inversify.config";
-import { TYPES } from "../../infra/types";
+import { container } from "../../infra/di/inversify.config";
+import { TYPES } from "../../infra/di/types";
 
 const path = "/notaservico";
 const notaServicoController = express.Router();

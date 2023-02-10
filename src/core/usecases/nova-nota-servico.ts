@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { TYPES } from "../../infra/types";
+import { TYPES } from "../../infra/di/types";
 import {
   BaseResponse,
   failureOnlyMessage,
