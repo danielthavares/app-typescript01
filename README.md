@@ -1,6 +1,6 @@
-## Aplicação backend typescript (em codificação)
+## Arquitetura backend typescript (em codificação)
 
-<p>Aplicação de exemplo backend construido em typescript</p>
+<p>Arquitetura backend construido em typescript</p>
 
 ---
 
@@ -32,6 +32,6 @@ npm run test
 - Jest - <span style="color:green">v</span>
 - Inversify - <span style="color:red">v</span>
 - Express - <span style="color:red">v</span>
-- Ajv - <span style="color:red">x</span>
+- Ajv - <span style="color:red">v</span>
 
 ---
