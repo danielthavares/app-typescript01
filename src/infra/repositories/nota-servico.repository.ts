@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
-import { NotaServico } from "../../core/entities/nota-servico.entity";
-import { INotaServicoRepository } from "../../core/interfaces/repositories/nota-servico.irepository";
+import { NotaServico } from "../../domain/entities/nota-servico.entity";
+import { INotaServicoRepository } from "../../domain/interfaces/repositories/nota-servico.irepository";
 
 @injectable()
 export class NotaServicoRepository implements INotaServicoRepository {

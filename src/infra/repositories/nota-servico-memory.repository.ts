@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
-import { NotaServico } from "../../core/entities/nota-servico.entity";
-import { INotaServicoRepository } from "../../core/interfaces/repositories/nota-servico.irepository";
+import { NotaServico } from "../../domain/entities/nota-servico.entity";
+import { INotaServicoRepository } from "../../domain/interfaces/repositories/nota-servico.irepository";
 
 @injectable()
 export class NotaServicoMemoryRepository implements INotaServicoRepository {
@@ -10,8 +10,8 @@ export class NotaServicoMemoryRepository implements INotaServicoRepository {
     this._database = [];
   }
 
-  update(code: number, notaServico: NotaServico): Promise<number> {
-    let record = this.findById(code);
+  async update(code: number, notaServico: NotaServico): Promise<number> {
+    let record = await this.findById(code);
 
     if (record) {
       this._database = this._database.filter((x) => x.getCode() !== code);
@@ -19,36 +19,39 @@ export class NotaServicoMemoryRepository implements INotaServicoRepository {
         new NotaServico(notaServico.getCode(), notaServico.getDetail())
       );
 
-      return Promise.resolve(1);
+      return 1;
     }
-    return Promise.resolve(0);
+    return 0;
   }
 
-  remove(code: number): Promise<number> {
-    let record = this.findById(code);
+  async remove(code: number): Promise<number> {
+    let record = await this.findById(code);
 
     if (record) {
       this._database = this._database.filter((x) => x.getCode() !== code);
-      return Promise.resolve(1);
+      return 1;
     }
-    return Promise.resolve(0);
+    return 0;
   }
 
-  findAll(): Promise<NotaServico[]> {
-    return Promise.resolve(this._database);
+  async findAll(): Promise<NotaServico[]> {
+    return this._database;
   }
 
-  insert(notaServico: NotaServico): Promise<NotaServico> {
+  async insert(notaServico: NotaServico): Promise<NotaServico> {
     const record = new NotaServico(
       notaServico.getCode(),
       notaServico.getDetail()
     );
+
     this._database.push(record);
-    return Promise.resolve(record);
+
+    return record;
   }
 
-  findById(code: number): Promise<NotaServico> {
+  async findById(code: number): Promise<NotaServico | null> {
     const record = this._database.find((x) => x.getCode() === code);
-    return Promise.resolve(record);
+    if (record) return record;
+    else return null;
   }
 }
