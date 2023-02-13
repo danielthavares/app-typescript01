@@ -15,7 +15,6 @@ export class NotaServicoService implements INotaServicoService {
   async createNotaServico(
     notaServicoDTO: CreateNotaServicoDTO
   ): Promise<BaseResponse> {
-    console.log({ notaServicoDTO });
     let model = new NotaServico(notaServicoDTO.code, notaServicoDTO.detail);
     const result = await this._novaNotaServicoUC.execute(model);
     return result;

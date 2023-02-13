@@ -25,6 +25,10 @@ app.use((_req, res) => {
   res.status(404).json({ msg: "URL não encontrada." });
 });
 
+app.use((err, _req, res, _next) => {
+  res.status(500).json({ err });
+});
+
 function start() {
   app.listen(PORT, () => {
     console.info(`Servidor no ar ${HOSTNAME}:${PORT}.`);
