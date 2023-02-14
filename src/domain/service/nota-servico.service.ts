@@ -15,7 +15,11 @@ export class NotaServicoService implements INotaServicoService {
   async novaNotaServico(
     notaServicoDTO: NovaNotaServicoDTO
   ): Promise<BaseResponse> {
-    let model = new NotaServico(notaServicoDTO.code, notaServicoDTO.detail);
+    let model = new NotaServico(
+      notaServicoDTO.code,
+      notaServicoDTO.detail,
+      notaServicoDTO.date
+    );
     const result = await this._novaNotaServicoUC.execute(model);
     return result;
   }

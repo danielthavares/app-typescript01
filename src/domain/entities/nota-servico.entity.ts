@@ -6,11 +6,13 @@ export class NotaServico {
   private code: number;
   private detail: string;
   private itens: Item[];
+  private date: string;
 
-  constructor(code: number, detail: string) {
+  constructor(code: number, detail: string, date: string) {
     this.code = code;
     this.detail = detail;
     this.itens = [];
+    this.date = date;
   }
 
   addItem(item: Item) {
@@ -23,6 +25,10 @@ export class NotaServico {
 
   getDetail() {
     return this.detail;
+  }
+
+  getDate() {
+    return this.date;
   }
 
   getSubTotal() {

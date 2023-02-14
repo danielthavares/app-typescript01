@@ -16,7 +16,11 @@ export class NotaServicoMemoryRepository implements INotaServicoRepository {
     if (record) {
       this._database = this._database.filter((x) => x.getCode() !== code);
       this._database.push(
-        new NotaServico(notaServico.getCode(), notaServico.getDetail())
+        new NotaServico(
+          notaServico.getCode(),
+          notaServico.getDetail(),
+          notaServico.getDate()
+        )
       );
 
       return 1;
@@ -41,7 +45,8 @@ export class NotaServicoMemoryRepository implements INotaServicoRepository {
   async insert(notaServico: NotaServico): Promise<NotaServico> {
     const record = new NotaServico(
       notaServico.getCode(),
-      notaServico.getDetail()
+      notaServico.getDetail(),
+      notaServico.getDate()
     );
 
     this._database.push(record);

@@ -4,5 +4,6 @@ Content-Type: application/json
 
 {
     "code": 1.99,
-    "detail": "detail"
+    "detail": "detail",
+    "date":"2023-02-14T14:01:39.000Z"
 }
