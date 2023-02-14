@@ -1,10 +1,10 @@
-import { createNotaServicoDTO } from "./schemas/create-nota-servico-dto.validation";
 import Ajv from "ajv";
 import ajvErrors from "ajv-errors";
+import { novaNotaServicoSchema } from "./schemas/create-nota-servico-dto.validation";
 
 export const ajv = new Ajv({ allErrors: true });
 
 ajvErrors(ajv);
 
 //add schemas
-ajv.addSchema(createNotaServicoDTO, "createNotaServicoDTO");
+ajv.addSchema(novaNotaServicoSchema, "novaNotaServicoSchema");

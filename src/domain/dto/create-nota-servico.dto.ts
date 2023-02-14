@@ -1,4 +1,4 @@
-export interface CreateNotaServicoDTO {
+export interface NovaNotaServicoDTO {
   code: number;
   detail: string;
 }

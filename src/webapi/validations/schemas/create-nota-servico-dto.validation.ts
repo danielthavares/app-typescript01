@@ -1,7 +1,7 @@
 import { JSONSchemaType } from "ajv";
-import { CreateNotaServicoDTO } from "../../../domain/dto/create-nota-servico.dto";
+import { NovaNotaServicoDTO } from "../../../domain/dto/create-nota-servico.dto";
 
-export const createNotaServicoDTO: JSONSchemaType<CreateNotaServicoDTO> = {
+export const novaNotaServicoSchema: JSONSchemaType<NovaNotaServicoDTO> = {
   type: "object",
   properties: {
     code: { type: "integer", minimum: 1, maximum: 999999999 },
