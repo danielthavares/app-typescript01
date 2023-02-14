@@ -1,6 +1,6 @@
 ## Arquitetura backend typescript (em codificação)
 
-<p>Arquitetura backend construido em typescript</p>
+Arquitetura backend construido em typescript
 
 ---
 
@@ -28,10 +28,10 @@ npm run test
 
 #### Bibliotecas que serão utilizadas (v = instaladas, x = ainda não instaladas)
 
-- Typescript - <span style="color:green">v</span>
-- Jest - <span style="color:green">v</span>
-- Inversify - <span style="color:red">v</span>
-- Express - <span style="color:red">v</span>
-- Ajv - <span style="color:red">v</span>
+- Typescript - v
+- Jest - v
+- Inversify - v
+- Express - v
+- Ajv - v
 
 ---
