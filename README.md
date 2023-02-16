@@ -32,6 +32,6 @@ npm run test
 - Jest - v
 - Inversify - v
 - Express - v
-- Ajv - v
+- Yup - v
 
 ---

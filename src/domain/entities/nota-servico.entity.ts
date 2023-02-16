@@ -6,9 +6,9 @@ export class NotaServico {
   private code: number;
   private detail: string;
   private itens: Item[];
-  private date: string;
+  private date?: Date;
 
-  constructor(code: number, detail: string, date: string) {
+  constructor(code: number, detail: string, date?: Date) {
     this.code = code;
     this.detail = detail;
     this.itens = [];

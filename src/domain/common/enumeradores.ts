@@ -1,5 +1,5 @@
 enum EnumCategoria {
-  SOLICITACAO = "Solicitacao",
+  SOLICITACAO = "Solicitação",
   MANUNTENCAO = "Manutenção",
   REPARACAO = "Reparação",
 }

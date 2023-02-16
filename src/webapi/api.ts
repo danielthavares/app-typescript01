@@ -25,7 +25,7 @@ app.use((_req, res) => {
   res.status(404).json({ msg: "URL não encontrada." });
 });
 
-app.use((err, _req, res, _next) => {
+app.use((err: any, _req: any, res: any, _next: any) => {
   res.status(500).json({ err });
 });
 

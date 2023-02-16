@@ -20,7 +20,6 @@ export class NotaServicoService implements INotaServicoService {
       notaServicoDTO.detail,
       notaServicoDTO.date
     );
-    const result = await this._novaNotaServicoUC.execute(model);
-    return result;
+    return await this._novaNotaServicoUC.execute(model);
   }
 }
