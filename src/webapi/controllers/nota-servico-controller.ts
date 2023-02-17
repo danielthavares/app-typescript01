@@ -17,13 +17,15 @@ notaServicoController.post(path, async (req, res) => {
 
     res.json(response);
   } catch (error) {
+    // TODO refatorar
     if (error && typeof error === "object") {
       if (error.hasOwnProperty("name") && error["name"] === "ValidationError") {
-        console.log({
-          path: error["path"],
-          errors: error["errors"],
-          message: error["message"],
-        });
+        let data = {
+          failures: {},
+        };
+        data.failures[error["path"]] = error["errors"];
+        res.status(400).json(data);
+        return;
       }
     }
     res.status(400).json(error);
