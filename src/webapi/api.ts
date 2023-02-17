@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { notaServicoController } from "./controllers/nota-servico-controller";
+
 const PORT = process.env.PORT || 4000;
 const HOSTNAME = process.env.HOSTNAME || "http://localhost";
 

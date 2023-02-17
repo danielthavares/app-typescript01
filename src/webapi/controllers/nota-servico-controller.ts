@@ -2,7 +2,7 @@ import express from "express";
 import { TYPES } from "../../infra/di/types";
 import { container } from "../../infra/di/inversify.config";
 import { INotaServicoService } from "../../domain/interfaces/services/nota-servico.interface";
-import { novaNotaServicoSchema } from "../validations/create-nota-servico-dto.validation";
+import { novaNotaServicoSchema } from "../validations/schemas";
 
 const path = "/notaservico";
 const notaServicoController = express.Router();
@@ -17,6 +17,15 @@ notaServicoController.post(path, async (req, res) => {
 
     res.json(response);
   } catch (error) {
+    if (error && typeof error === "object") {
+      if (error.hasOwnProperty("name") && error["name"] === "ValidationError") {
+        console.log({
+          path: error["path"],
+          errors: error["errors"],
+          message: error["message"],
+        });
+      }
+    }
     res.status(400).json(error);
   }
 });
