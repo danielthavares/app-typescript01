@@ -1,7 +1,7 @@
 const TYPES = {
-  INotaServicoRepository: Symbol.for("INotaServicoRepository"),
-  INovaNotaServicoUseCase: Symbol.for("INovaNotaServicoUseCase"),
-  INotaServicoService: Symbol.for("INotaServicoService"),
+  IServiceOrderRepository: Symbol.for("IServiceOrderRepository"),
+  ICreateServiceOrderUC: Symbol.for("ICreateServiceOrderUC"),
+  IServiceOrderService: Symbol.for("IServiceOrderService"),
 };
 
 export { TYPES };

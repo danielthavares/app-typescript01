@@ -1,6 +1,6 @@
 import { Container } from "inversify";
-import { useNotaServico } from "./nota-servico.config";
+import { useServiceOrder } from "./servicer-order-di";
 
 export const container = new Container();
 
-useNotaServico(container);
+useServiceOrder(container);
