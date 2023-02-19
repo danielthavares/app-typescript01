@@ -1,13 +1,17 @@
 import { EnumCategory } from "../common/enumerators";
 
-export type CreateServiceOrderInput = {
+export type ServiceOrderOutput = {
   code: number;
   detail: string;
   date?: Date;
-  itens: ItemInput[];
+  itens: ItemOutput[];
+  subtotal: number;
+  tax: number;
+  discount: number;
+  total: number;
 }
 
-export type ItemInput = {
+export type ItemOutput = {
   category: EnumCategory;
   description: string;
   price: number;

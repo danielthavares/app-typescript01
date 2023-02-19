@@ -31,6 +31,10 @@ export class ServiceOrder {
     return this.date;
   }
 
+  getItens() {
+    return this.itens;
+  }
+
   getSubTotal() {
     let total = this.itens
       .map((i) => i.getPrice())
