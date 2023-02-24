@@ -9,7 +9,7 @@ import {
 } from "../../domain/common/base-response";
 import { initLocale } from "./core/validator.config";
 import { injectable } from "inversify";
-import { registerSchemas } from "./schemas/register-schemas";
+import { schemas } from "./schemas/register-schemas";
 
 @injectable()
 export class Validator implements IValidator {
@@ -17,7 +17,7 @@ export class Validator implements IValidator {
 
   constructor() {
     initLocale("keys");
-    this._schemas = registerSchemas();
+    this._schemas = schemas;
   }
 
   async validate(validable: Symbol, input: any): Promise<BaseResponse> {
