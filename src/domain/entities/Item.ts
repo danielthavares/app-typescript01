@@ -1,25 +1,25 @@
 import { EnumCategory } from "../common/enumerators";
 
 export abstract class Item {
-  private category: EnumCategory;
-  private description: string;
-  private price: number;
+  private _category: EnumCategory;
+  private _description: string;
+  private _price: number;
 
   constructor(category: EnumCategory, description: string, price: number) {
-    this.category = category;
-    this.description = description;
-    this.price = price;
+    this._category = category;
+    this._description = description;
+    this._price = price;
   }
 
   getCategory(): EnumCategory {
-    return this.category;
+    return this._category;
   }
 
-  getDescription(): string{
-    return this.description
+  getDescription(): string {
+    return this._description;
   }
 
-  getPrice(): number{
-    return this.price;
+  getPrice(): number {
+    return this._price;
   }
 }

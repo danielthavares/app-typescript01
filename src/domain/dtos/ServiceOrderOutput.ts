@@ -1,6 +1,6 @@
 import { EnumCategory } from "../common/enumerators";
 
-export type ServiceOrderOutput = {
+export class ServiceOrderOutput {
   code: number;
   detail: string;
   date?: Date;
@@ -11,7 +11,7 @@ export type ServiceOrderOutput = {
   total: number;
 }
 
-export type ItemOutput = {
+export class ItemOutput {
   category: EnumCategory;
   description: string;
   price: number;

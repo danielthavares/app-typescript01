@@ -3,40 +3,40 @@ import { instanceOfTax } from "../interfaces/entities/Tax";
 import { instanceOfDiscount } from "../interfaces/entities/Discount";
 
 export class ServiceOrder {
-  private code: number;
-  private detail: string;
-  private date?: Date;
-  private itens: Item[];
+  private _code: number;
+  private _detail: string;
+  private _date?: Date;
+  private _itens: Item[];
 
   constructor(code: number, detail: string, date?: Date) {
-    this.code = code;
-    this.detail = detail;
-    this.date = date;
-    this.itens = [];
+    this._code = code;
+    this._detail = detail;
+    this._date = date;
+    this._itens = [];
   }
 
   addItem(item: Item) {
-    this.itens.push(item);
+    this._itens.push(item);
   }
 
   getCode() {
-    return this.code;
+    return this._code;
   }
 
   getDetail() {
-    return this.detail;
+    return this._detail;
   }
 
   getDate() {
-    return this.date;
+    return this._date;
   }
 
   getItens() {
-    return this.itens;
+    return this._itens;
   }
 
   getSubTotal() {
-    let total = this.itens
+    let total = this._itens
       .map((i) => i.getPrice())
       .reduce((acc, value) => {
         acc = acc + value;
@@ -47,7 +47,7 @@ export class ServiceOrder {
 
   getTax() {
     let tax = 0;
-    this.itens.forEach((i) => {
+    this._itens.forEach((i) => {
       if (instanceOfTax(i)) tax += i.getTax();
     });
     return Number(tax.toFixed(2));
@@ -55,7 +55,7 @@ export class ServiceOrder {
 
   getDiscount() {
     let discount = 0;
-    this.itens.forEach((i) => {
+    this._itens.forEach((i) => {
       if (instanceOfDiscount(i)) discount += i.getDiscount();
     });
     return Number(discount.toFixed(2));

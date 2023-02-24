@@ -1,14 +1,18 @@
 import { EnumCategory } from "../common/enumerators";
 
-export type CreateServiceOrderInput = {
+class CreateServiceOrderInput {
   code: number;
   detail: string;
   date?: Date;
   itens: ItemInput[];
 }
 
-export type ItemInput = {
+class ItemInput {
   category: EnumCategory;
   description: string;
   price: number;
 }
+
+const createServiceOrderInputSymbol = Symbol();
+
+export { CreateServiceOrderInput, ItemInput, createServiceOrderInputSymbol };

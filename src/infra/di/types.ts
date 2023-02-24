@@ -1,7 +1,8 @@
 const TYPES = {
-  IServiceOrderRepository: Symbol.for("IServiceOrderRepository"),
-  ICreateServiceOrderUC: Symbol.for("ICreateServiceOrderUC"),
-  IServiceOrderService: Symbol.for("IServiceOrderService"),
+  IServiceOrderRepository: Symbol(),
+  ICreateServiceOrderUC: Symbol(),
+  IServiceOrderService: Symbol(),
+  IValidator: Symbol(),
 };
 
 export { TYPES };
