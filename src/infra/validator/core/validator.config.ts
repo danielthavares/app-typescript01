@@ -1,6 +1,6 @@
 import { LocaleObject, setLocale } from "yup";
 import { ptBR } from "./i18n/pt_br";
-import { keysAndValues } from "./i18n/keys_values";
+import { keysAndValues } from "./i18n/keys";
 
 function initLocale(locale: "en" | "ptBR" | "keys") {
   let localeOject: LocaleObject = {};

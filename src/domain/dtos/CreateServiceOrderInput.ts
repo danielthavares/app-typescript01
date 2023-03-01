@@ -1,17 +1,17 @@
 import { EnumCategory } from "../common/enumerators";
 
-class CreateServiceOrderInput {
+type CreateServiceOrderInput = {
   code: number;
   detail: string;
   date?: Date;
   itens: ItemInput[];
-}
+};
 
-class ItemInput {
+type ItemInput = {
   category: EnumCategory;
   description: string;
   price: number;
-}
+};
 
 const createServiceOrderInputSymbol = Symbol();
 

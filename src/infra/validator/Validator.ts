@@ -7,7 +7,6 @@ import {
   failureOnlyMessage,
   success,
 } from "../../domain/common/base-response";
-import { initLocale } from "./core/validator.config";
 import { injectable } from "inversify";
 import { schemas } from "./schemas/register-schemas";
 
@@ -16,7 +15,6 @@ export class Validator implements IValidator {
   private _schemas: Map<Symbol, ObjectSchema<any>>;
 
   constructor() {
-    initLocale("keys");
     this._schemas = schemas;
   }
 

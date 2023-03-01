@@ -4,6 +4,9 @@ import {
   CreateServiceOrderInput,
   ItemInput,
 } from "../../../domain/dtos/CreateServiceOrderInput";
+import { initLocale } from "../core/validator.config";
+
+initLocale("keys");
 
 const itemSchema: ObjectSchema<ItemInput> = object({
   category: mixed<EnumCategory>().oneOf(Object.values(EnumCategory)).required(),
