@@ -15,7 +15,7 @@ npm run install
 - Iniciar aplicação
 
 ```
-npm start
+npm dev
 ```
 
 - Testes

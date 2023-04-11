@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { notaServicoController } from "./controllers/nota-servico-controller";
+import { serviceOrderController } from "./controllers/service-order-controller";
 
 const PORT = process.env.PORT || 4000;
 const HOSTNAME = process.env.HOSTNAME || "http://localhost";
@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-app.use("/api", notaServicoController);
+app.use("/api", serviceOrderController);
 
 app.use((_req, res) => {
   res.status(404).json({ msg: "URL não encontrada." });
