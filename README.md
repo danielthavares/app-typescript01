@@ -1,6 +1,6 @@
 ## Arquitetura backend typescript (em codificação)
 
-Arquitetura backend construido em typescript
+Arquitetura backend construida em typescript
 
 ---
 

@@ -3,7 +3,7 @@ import { TYPES } from "../../infra/di/types";
 import { container } from "../../infra/di/inversify.config";
 import { IServiceOrderService } from "../../domain/interfaces/services/IServiceOrderService";
 
-const path = "/notaservico";
+const path = "/serviceorder";
 const serviceOrderController = express.Router();
 const service = container.get<IServiceOrderService>(TYPES.IServiceOrderService);
 
